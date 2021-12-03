@@ -22,3 +22,6 @@ Ansible で Cisco IOS のネットワーク機器への作業の自動化を体�
 
 👉 [ハンズオン1: 準備と確認](./docs/handson1.md)
 
+# 参考資料
+
+[参考資料一覧はこちら](./docs/seealso.md)
