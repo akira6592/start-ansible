@@ -136,10 +136,10 @@ ls -l outputs
 -rw-rw-r--. 1 ansible ansible 2348 Dec  1 08:25 ios01_show_version.txt
 ```
 
-表示された結果ファイルのうち、任意の `ios01_showコマンド名.txt` の内容を `cat` コマンドなどで確認してください。ここでは例として、`ios01_show_version.txt` を確認する例を掲載します。
+表示された結果ファイルのうち、任意の `ios01_showコマンド名.txt` の内容を `cat` コマンドなどで確認してください。ここでは例として、`ios01_show_running-config.txt` を確認する例を掲載します。
 
 ```
-$ cat ./outputs/ios01_show_version.txt
+$ cat ./outputs/ios01_show_running-config.txt
 Current configuration : 7480 bytes
 !
 ! Last configuration change at 15:07:14 JST Wed Dec 1 2021
