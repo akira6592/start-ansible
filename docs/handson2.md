@@ -45,7 +45,7 @@ Playbook（`handson2.yml`）は以下の通りです。
         commands: "{{ show_commands }}"   # 実行したいshowコマンドを指定（変数として）
       register: result_show_commands      # 実行結果をresult_show_commandsという変数に格納
 
-    # タスク3: 結果のファイル出力
+    # タスク2: 結果のファイル出力
     - name: save to file show commands
       ansible.builtin.copy:
         content: "{{ item }}"     # 出力したい内容（itemにループごとに各showコマンド実行結果が入る）
@@ -72,7 +72,7 @@ Playbook（`handson2.yml`）は以下の通りです。
 
 [`commands` パラメーター](https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_command_module.html#parameter-commands)で、実行したいshowコマンドをリストで指定します。ここでは、前述の変数 `show_commands` を指定します。
 
-### タスク1: 結果のファイル出力
+### タスク2: 結果のファイル出力
 
 [`copy` モジュール](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html)を利用して、showコマンド実行結果をファイルを書き出すタスクです。
 
@@ -124,7 +124,7 @@ Playbookの実行によって、showコマンド実行結果が `~/handson/outpu
 以下のコマンドで、ファイルの一覧を確認してください。
 
 ```
-ls -l ~/handson/outputs
+ls -l outputs
 ```
 
 以下 4ファイルがあることを確認してください。

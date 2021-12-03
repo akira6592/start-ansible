@@ -55,7 +55,6 @@ ansible-playbook -i inventory.ini handson4.yml
 以下は実行結果例です。
 
 ```bash
-# TODO: playbook実行ログ
 (ansible) [ansible@controller handson]$ ansible-playbook -i inventory.ini handson4.yml
 
 PLAY [ios] *********************************************************************
