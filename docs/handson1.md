@@ -39,7 +39,7 @@ ansible --version
 ```bash
 # コマンド実行結果例
 (ansible) [ansible@controller ~]$ ansible --version
-ansible [core 2.11.6]
+ansible [core 2.11.7]
 ...(略)...
 ```
 
