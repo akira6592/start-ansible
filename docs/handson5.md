@@ -30,7 +30,7 @@ interface GigabitEthernet3
   # ここからタスクの定義
   tasks:
     # タスク1: インターフェースへdescriptionの設定
-    - name: config interface descption
+    - name: config interface description
       cisco.ios.ios_interfaces:
         config:   # この下からは未完成
 
