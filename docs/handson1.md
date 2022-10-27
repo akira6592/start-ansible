@@ -34,12 +34,12 @@ Ansible が利用できるようになったことを確認するために、以
 ansible --version
 ```
 
-実行後、以下のように、`ansible [core 2.11.x]` と表示されることを確認してください。（`x`は数字がはいります）
+実行後、以下のように、`ansible [core 2.13.x]` と表示されることを確認してください。（`x`は数字がはいります）
 
 ```bash
 # コマンド実行結果例
 (ansible) [ansible@controller ~]$ ansible --version
-ansible [core 2.11.x]
+ansible [core 2.13.x]
 ...(略)...
 ```
 
