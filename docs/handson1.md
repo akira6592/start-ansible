@@ -14,6 +14,7 @@ TeraTerm などのターミナルソフトや ssh コマンドを利用して An
 
 その venv を有効化し、Ansible を利用できる状態にします。venv 有効化するために以下のコマンドを実行してください。
 
+【コマンド実行】
 ```bash
 source /opt/ansible/bin/activate
 ```
@@ -30,6 +31,7 @@ source /opt/ansible/bin/activate
 
 Ansible が利用できるようになったことを確認するために、以下のバージョン表示コマンドを実行してください。
 
+【コマンド実行】
 ```bash
 ansible --version
 ```
@@ -49,6 +51,7 @@ ansible [core 2.13.x]
 
 まず、以下のコマンドで `~/handson` ディレクトリ移動してください。
 
+【コマンド実行】
 ```
 cd ~/handson
 ```
@@ -71,6 +74,7 @@ cd ~/handson
 
 以下のコマンドでインベントリファイルの中身を表示してください。
 
+【コマンド実行】
 ```bash
 cat inventory.ini
 ```
@@ -95,6 +99,7 @@ ios01 ansible_host=10.1.1.254
 
 以下のコマンドで、接続情報を定義した変数ファイルの中身を表示してください。
 
+【コマンド実行】
 ```bash
 cat group_vars/ios.yml
 ```

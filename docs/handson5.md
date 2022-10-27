@@ -50,7 +50,7 @@ interface GigabitEthernet3
 
 次に、作成したPlaybookを実行します。以下のコマンドでPlaybookを実行してください。
 
-コマンドの実行
+【コマンド実行】
 ```bash
 ansible-playbook -i inventory.ini handson5.yml
 ```
@@ -89,6 +89,7 @@ Playbook内ではコンフィグそのものは指定していませんが、[`c
 
 以下のコマンドを実行して、Ansible経由でコンフィグを表示してください。
 
+【コマンド実行】
 ```
 ansible -i inventory.ini ios -m ios_command -a "commands='show running-config interface GigabitEthernet3'"
 ```

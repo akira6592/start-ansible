@@ -43,7 +43,7 @@ Playbook内のタスクについて解説します。
 
 次に、作成したPlaybookを実行します。以下のコマンドでPlaybookを実行してください。
 
-コマンドの実行
+【コマンド実行】
 ```bash
 ansible-playbook -i inventory.ini handson3.yml
 ```
@@ -81,12 +81,15 @@ ntp server 10.0.0.12
 
 まず、Ansibleサーバーから、ルーターにsshでログインしてください。
 
+【コマンド実行】
 ```bash
 # AnsibleサーバーからルーターへのSSH
 ssh ansible@ios01    # パスワードはAnsibleサーバーと同じ
 ```
 
 次に、ルーター上で特権モードに移行後、 `show running-config | inc ntp` コマンドを実行してください。
+
+【コマンド実行】
 ```bash
 # ルーター上での確認
 enable    # パスワードはログインと同じ
@@ -95,6 +98,7 @@ show running-config | inc ntp
 
 結果を見て、設定が入っていることを確認してください。（`ntp server ntp.nict.jp` は元々設定済みのものです）
 
+【コマンド実行】
 ```bash
 # 想定結果（順番は異なる場合があります）
 ios01#show running-config | inc ntp
@@ -104,6 +108,8 @@ ntp server 10.0.0.12
 ```
 
 確認できたら、ルーター上で `logout`コマンドを実行し、Ansibleサーバーに戻ってください。
+
+【コマンド実行】
 ```
 # ルーターからログアウト
 logout

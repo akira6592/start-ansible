@@ -88,7 +88,7 @@ Playbook（`handson2.yml`）は以下の通りです。
 
 以下のコマンドでPlaybookを実行してください。
 
-コマンドの実行
+【コマンド実行】
 ```bash
 ansible-playbook -i inventory.ini handson2.yml 
 ```
@@ -123,6 +123,7 @@ Playbookの実行によって、showコマンド実行結果が `~/handson/outpu
 
 以下のコマンドで、ファイルの一覧を確認してください。
 
+【コマンド実行】
 ```
 ls -l outputs
 ```
@@ -138,6 +139,7 @@ ls -l outputs
 
 表示された結果ファイルのうち、任意の `ios01_showコマンド名.txt` の内容を `cat` コマンドなどで確認してください。ここでは例として、`ios01_show_running-config.txt` を確認する例を掲載します。
 
+【コマンド実行】
 ```
 $ cat ./outputs/ios01_show_running-config.txt
 Current configuration : 7480 bytes

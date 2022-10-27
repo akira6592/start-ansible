@@ -47,7 +47,7 @@ Playbook内のタスクについて解説します。
 
 次に、作成したPlaybookを実行します。以下のコマンドでPlaybookを実行してください。
 
-コマンドの実行
+【コマンド実行】
 ```bash
 ansible-playbook -i inventory.ini handson4.yml
 ```
@@ -89,6 +89,7 @@ Playbook内では上記のようなコンフィグそのものは指定してい
 
 以下のコマンドを実行して、Ansible経由でコンフィグを表示してください。
 
+【コマンド実行】
 ```
 ansible -i inventory.ini ios -m ios_command -a "commands='show running-config interface GigabitEthernet3'"
 ```
