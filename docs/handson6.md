@@ -12,7 +12,8 @@
 - Playbook のファイル名は `handson6-1.yml` とする
 
 ### ヒント
-- スタティックルートの設定は [`ccisco.ios.ios_static_routes`](https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_static_routes_module.html) モジュールを利用
+- タスクは1つのみ
+- スタティックルートの設定は [`ccisco.ios.ios_static_routes`](https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_static_routes_module.html) モジュールを利用する
 
 
 ## ハンズオン6-2: ルーターから ping の実行（難易度: 中）
@@ -22,8 +23,34 @@
 - Playbook のファイル名は `handson6-2.yml` とする
 
 ### ヒント
-- ping の実行は [`cisco.ios.ios_ping`](https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_ping_module.html) モジュールを利用
-- 画面への表示は [`ansible.builtin.debug](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html) モジュールを利用
+- タスクは2つ
+- ping の実行は [`cisco.ios.ios_ping`](https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_ping_module.html) モジュールを利用する
+- 画面への表示は [`ansible.builtin.debug](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html) モジュールを利用する
+
+## ハンズオン6-3: インターフェースの状態確認の自動化（難易度: 高）
+
+### 要件
+- ルーターの `GigabitEthernet3` の link status が `up` であること確認する
+- Playbook のファイル名は `handson6-3.yml` とする
+
+### ヒント
+- タスクは2つ
+- コマンドの実行には [`ansible.utils.cli_parse`](https://docs.ansible.com/ansible/latest/collections/ansible/utils/cli_parse_module.html) モジュールを利用する
+  - show コマンドの実行結果から効率よく値を切り出すためにパーサーを利用。今回は `ansible.netcommon.ntc_templates` を利用するために以下のように指定する
+    ```yaml
+      #　(略)
+      ansible.utils.cli_parse:
+        command: # (略)
+        parser:
+          name: ansible.netcommon.ntc_templates
+    ```
+- 「～が～であること」という確認は [`ansible.builtin.assert`](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/assert_module.html) モジュールを利用する
+  - `that` オプションに条件を指定
+  - showコマンド実行結果が変数 `res_show_interface` に入っている場合、以下の指定をすると `GigabitEthernet3` の link status が切り出せる
+    ```yaml
+    res_show_interfaces.parsed | selectattr("interface", "==", "GigabitEthernet3")).0.link_status
+    ```
+  - 起動している場合は `up` となる
 
 ---
 

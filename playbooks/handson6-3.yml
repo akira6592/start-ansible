@@ -1,0 +1,17 @@
+---
+- hosts: ios            # 対象のグループ名（インベントリファイル内の定義）
+  gather_facts: false   # システム情報収集機能の無効化（時間短縮のため）
+
+  # ここからタスクの定義
+  tasks:
+    - name: exec show interfaces and parse
+      ansible.utils.cli_parse:
+        command: show interfaces
+        parser:
+          name: ansible.netcommon.ntc_templates
+      register: res_show_interfaces
+
+    - name: assert GigabitEthernet3 link status
+      ansible.builtin.assert:
+        that:
+          - (res_show_interfaces.parsed | selectattr("interface", "==", "GigabitEthernet3")).0.link_status == "up"
