@@ -1,0 +1,14 @@
+---
+- hosts: ios            # 対象のグループ名（インベントリファイル内の定義）
+  gather_facts: false   # システム情報収集機能の無効化（時間短縮のため）
+
+  # ここからタスクの定義
+  tasks:
+    - name: exec ping
+      cisco.ios.ios_ping:
+        dest: 10.1.1.1
+      register: res_ping
+    
+    - name: debug ping
+      ansible.builtin.debug:
+        msg: "{{ res_ping }}"

@@ -1,0 +1,15 @@
+---
+- hosts: ios            # 対象のグループ名（インベントリファイル内の定義）
+  gather_facts: false   # システム情報収集機能の無効化（時間短縮のため）
+
+  # ここからタスクの定義
+  tasks:
+    - name: config static route
+      cisco.ios.ios_static_routes:
+        config:
+          - address_families:
+            - afi: ipv4
+              routes:
+              - dest: 172.16.0.0/16
+                next_hops:
+                - forward_router_address: 10.1.1.1
