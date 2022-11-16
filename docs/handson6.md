@@ -49,7 +49,7 @@
   - `that` オプションに条件を指定
   - showコマンド実行結果が変数 `res_show_interface` に入っている場合、以下の指定をすると `GigabitEthernet3` の link status が切り出せる
     ```yaml
-    res_show_interfaces.parsed | selectattr("interface", "==", "GigabitEthernet3")).0.link_status
+    (res_show_interfaces.parsed | selectattr("interface", "==", "GigabitEthernet3")).0.link_status
     ```
   - 起動している場合は `up` となる
 
