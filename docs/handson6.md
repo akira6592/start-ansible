@@ -38,7 +38,8 @@
 - コマンドの実行には [`ansible.utils.cli_parse`](https://docs.ansible.com/ansible/latest/collections/ansible/utils/cli_parse_module.html) モジュールを利用する
   - show コマンドの実行結果から効率よく値を切り出すためにパーサーを利用。今回は `ansible.netcommon.ntc_templates` を利用するために以下のように指定する
     ```yaml
-      #　(略)
+      # (略)
+    - name: assert GigabitEthernet3 link status
       ansible.utils.cli_parse:
         command: # (略)
         parser:
