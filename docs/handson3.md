@@ -116,7 +116,7 @@ logout
 ```
 
 Ansibleサーバーに戻り、プロンプトがサーバーの以下のようなサーバーのものになったことを確認してください。
-```
+```bash
 (ansible) [ansible@controller handson]$ 　　　　　　　# サーバー側のプロンプト
 ```
 
