@@ -51,7 +51,7 @@
     ```yaml
     (res_show_interfaces.parsed | selectattr("interface", "==", "GigabitEthernet3")).0.link_status
     ```
-  - 起動している場合は `up` となる
+  - 起動している場合は `up` となる。ハンズオン環境の初期状態も `up`
 
 ---
 
