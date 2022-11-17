@@ -25,7 +25,7 @@
 ### ヒント
 - タスクは2つ
 - ping の実行は [`cisco.ios.ios_ping`](https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_ping_module.html) モジュールを利用する
-- 画面への表示は [`ansible.builtin.debug](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html) モジュールを利用する
+- 画面への表示は [`ansible.builtin.debug`](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html) モジュールを利用する
 
 ## 【ハンズオン6-3】インターフェースの状態確認の自動化（難易度: 高）
 
