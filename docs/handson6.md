@@ -14,6 +14,7 @@
 ### ヒント
 - タスクは1つのみ
 - スタティックルートの設定は [`ccisco.ios.ios_static_routes`](https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_static_routes_module.html) モジュールを利用する
+- `ccisco.ios.ios_static_routes` モジュールは、IPv4のルート、IPv6 のルートそれぞれに対応しているが、今回の要件は IPv4
 
 
 ## 【ハンズオン6-2】 ルーターから ping の実行（難易度: 中）
